@@ -1,0 +1,79 @@
+name: Bug report
+description: Something in the course is wrong, confusing, or broken.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the course! Please give enough detail that someone else can see the problem.
+  - type: dropdown
+    id: lesson
+    attributes:
+      label: Which lesson?
+      options:
+        - "01 — Getting Started"
+        - "02 — Functions & Control Flow"
+        - "03 — Ownership & Borrowing"
+        - "04 — Structs & Methods"
+        - "05 — Enums & Pattern Matching"
+        - "06 — Common Collections"
+        - "07 — Error Handling"
+        - "08 — Packages, Crates & Modules"
+        - "09 — Traits & Generics"
+        - "10 — Testing"
+        - "11 — Closures & Iterators"
+        - "12 — Files & the Command Line"
+        - "13 — Lifetimes, Trait Objects & Smart Pointers"
+        - "14 — Concurrency"
+        - "15 — Polish & Next Steps"
+        - "README / repository setup"
+        - "Other"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: What part of the lesson?
+      options:
+        - "Lesson text (explanation is wrong or unclear)"
+        - "Code example in the lesson"
+        - "Practice problem / tests (exercises/lesson-NN)"
+        - "ANSWERS.md questions"
+        - "taskr homework instructions"
+        - "Git branches / merging"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What's wrong?
+      description: Describe the problem. Quote the text or code involved, or name the section or function.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The commands you ran, if any.
+      placeholder: |
+        1. git switch lesson-03
+        2. cd exercises && cargo test -p lesson-03
+        3. ...
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+  - type: textarea
+    id: output
+    attributes:
+      label: Compiler or test output
+      description: Paste any error messages here.
+      render: text
+  - type: input
+    id: rust-version
+    attributes:
+      label: Rust version
+      description: Output of `rustc --version`
+      placeholder: rustc 1.99.1 (58cf8f9c3 2026-10-13)

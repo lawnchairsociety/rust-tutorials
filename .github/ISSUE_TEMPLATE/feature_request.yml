@@ -1,0 +1,50 @@
+name: Feature request
+description: Suggest a new topic, a better exercise, or an improvement to the course.
+title: "[Idea] "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of suggestion?
+      options:
+        - "New lesson or topic"
+        - "New or better practice problem"
+        - "taskr homework idea"
+        - "Better explanation or example"
+        - "Tooling / repository structure"
+        - "Other"
+    validations:
+      required: true
+  - type: dropdown
+    id: lesson
+    attributes:
+      label: Related lesson (if any)
+      options:
+        - "Not lesson-specific"
+        - "01 — Getting Started"
+        - "02 — Functions & Control Flow"
+        - "03 — Ownership & Borrowing"
+        - "04 — Structs & Methods"
+        - "05 — Enums & Pattern Matching"
+        - "06 — Common Collections"
+        - "07 — Error Handling"
+        - "08 — Packages, Crates & Modules"
+        - "09 — Traits & Generics"
+        - "10 — Testing"
+        - "11 — Closures & Iterators"
+        - "12 — Files & the Command Line"
+        - "13 — Lifetimes, Trait Objects & Smart Pointers"
+        - "14 — Concurrency"
+        - "15 — Polish & Next Steps"
+  - type: textarea
+    id: idea
+    attributes:
+      label: Describe your idea
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help?
+      description: What problem does it solve, or what would a learner get out of it?
