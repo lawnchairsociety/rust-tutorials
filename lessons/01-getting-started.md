@@ -214,14 +214,18 @@ release build it wraps around to 0. If you want specific behavior, say so explic
 
 ```rust
 fn main() {
-    let pi = 3.14159;        // f64 (the default float)
+    let price = 9.99;        // f64 (the default float)
     let half: f32 = 0.5;
     let is_done = false;     // bool
     let letter = 'R';        // char — single quotes, 4 bytes, any Unicode scalar value
     let crab = '🦀';
-    println!("{pi} {half} {is_done} {letter} {crab}");
+    println!("{price} {half} {is_done} {letter} {crab}");
 }
 ```
+
+> **Tip:** need π or *e*? Use the exact constants in the standard library, such as
+> `std::f64::consts::PI`, instead of typing `3.14159`. Clippy (the linter your editor runs)
+> reports a hand-typed approximation like that as an error (`approx_constant`).
 
 ### Arithmetic and conversions
 
@@ -312,7 +316,7 @@ fn main() {
     println!("[{:>6}]", "right");             // [ right]
     println!("[{:<6}]", "left");              // [left  ]
     println!("[{:^7}]", "mid");               // [  mid  ]
-    println!("{:.2}", 3.14159);               // 3.14
+    println!("{:.2}", 1.23456);               // 1.23
     println!("{:03}", 7);                     // 007
 
     let line = format!("{name} ({age})");     // a String
