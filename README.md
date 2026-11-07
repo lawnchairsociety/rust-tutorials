@@ -26,7 +26,7 @@ exercises/
     src/lib.rs             ← practice problems: replace each todo!() so the tests pass
     ANSWERS.md             ← write your answers to the conceptual questions here
 taskr/                     ← YOUR homework project (you create it in Lesson 1)
-playground/                ← scratch projects for trying out examples (git-ignored)
+playground/                ← scratch projects for trying out examples (git-ignored, except its Cargo.toml)
 ```
 
 ## How the branches work
@@ -66,7 +66,9 @@ To pick up fixes made to the course later, run `git fetch` and then update each 
 
 Open the repository folder (`code .`). VS Code will offer to install the recommended extensions: **rust-analyzer** (autocomplete, inline errors, go-to-definition), **Even Better TOML** (for `Cargo.toml`) and **CodeLLDB** (debugger). Accept them.
 
-`.vscode/settings.json` tells rust-analyzer where the two Cargo projects are: `exercises/` and `taskr/`. Until you create `taskr` in Lesson 1, rust-analyzer will warn that it can't find `taskr/Cargo.toml`. That's expected and goes away once the project exists. After `cargo new taskr`, run **"rust-analyzer: Restart server"** from the command palette (Ctrl+Shift+P).
+rust-analyzer finds the Cargo projects in the repo's top-level folders on its own: `exercises/`, `playground/` and, once you create it in Lesson 1, `taskr/`. After `cargo new taskr`, run **"rust-analyzer: Restart server"** from the command palette (Ctrl+Shift+P) so it picks up the new project.
+
+`playground/` is a Cargo *workspace*. When you run `cargo new <name>` inside it, Cargo adds the new project to the `members` list in `playground/Cargo.toml`, and that's what lets rust-analyzer see it. Everything in `playground/` except that one file is git-ignored.
 
 ### While working on a lesson
 
