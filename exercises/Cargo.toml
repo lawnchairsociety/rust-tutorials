@@ -1,0 +1,5 @@
+# Workspace holding one practice crate per lesson.
+# Run a lesson's practice problems with:  cargo test -p lesson-NN
+[workspace]
+resolver = "3"
+members = ["lesson-*"]
