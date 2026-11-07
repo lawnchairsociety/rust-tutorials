@@ -47,12 +47,25 @@ The lesson branches only add new files under `lessons/` and `exercises/lesson-NN
 
 ### First-time setup
 
-Install Rust if you don't have it yet (https://rustup.rs), then:
+Install Rust if you don't have it yet (https://rustup.rs). Then clone the course and create local copies of the lesson branches. A fresh clone only gives you `main` locally, and the commands below need every `lesson-NN` branch:
 
 ```bash
-cd ~/Workspaces/rust-tutorials
+git clone https://github.com/lawnchairsociety/rust-tutorials.git
+cd rust-tutorials
+for b in $(git branch -r | grep 'origin/lesson-'); do git branch --track "${b#origin/}" "$b"; done
+
 git switch -c work-01 lesson-01      # create your Lesson 1 work branch
 ```
+
+If you already have the repo with its lesson branches, just run the last line.
+
+To pick up fixes made to the course later, run `git fetch` and then update each lesson branch with `git switch lesson-NN && git pull` before you merge it.
+
+### Editor setup (VS Code)
+
+Open the repository folder (`code .`). VS Code will offer to install the recommended extensions: **rust-analyzer** (autocomplete, inline errors, go-to-definition), **Even Better TOML** (for `Cargo.toml`) and **CodeLLDB** (debugger). Accept them.
+
+`.vscode/settings.json` tells rust-analyzer where the two Cargo projects are: `exercises/` and `taskr/`. Until you create `taskr` in Lesson 1, rust-analyzer will warn that it can't find `taskr/Cargo.toml`. That's expected and goes away once the project exists. After `cargo new taskr`, run **"rust-analyzer: Restart server"** from the command palette (Ctrl+Shift+P).
 
 ### While working on a lesson
 
@@ -127,3 +140,11 @@ git log --oneline --graph --all      # picture of the whole history
 - **Expect warnings in the practice crates.** Until you implement a function, the compiler warns about unused variables. Those warnings go away as you fill in each `todo!()`.
 - **Run one test at a time** with `cargo test -p lesson-03 longest_word`. Cargo only runs tests whose names contain the filter text.
 - **Keep the official book open:** https://doc.rust-lang.org/book/. The "Further reading" section in each lesson points to the matching chapter.
+
+## Found a problem or have an idea?
+
+Open an issue at https://github.com/lawnchairsociety/rust-tutorials/issues/new/choose. There are templates for **bug reports** (a typo, a wrong explanation, an example that doesn't compile, a broken test) and **feature requests** (a new topic, a better exercise, a homework idea).
+
+## License
+
+[MIT](LICENSE)
