@@ -33,7 +33,13 @@ $ cargo --version
 
 ### Creating a project
 
+Make your experiments in the **`playground/`** folder at the root of this repo. It's listed in
+`.gitignore`, so anything you create there stays on your machine and never ends up in a commit.
+Use it for every example in this course that you want to try out. The one exception is the
+homework project, `taskr`, which goes in the repo root.
+
 ```console
+$ mkdir -p playground && cd playground
 $ cargo new hello
     Creating binary (application) `hello` package
 $ cd hello
