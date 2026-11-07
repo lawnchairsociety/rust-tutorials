@@ -26,6 +26,7 @@ exercises/
     src/lib.rs             ← practice problems: replace each todo!() so the tests pass
     ANSWERS.md             ← write your answers to the conceptual questions here
 taskr/                     ← YOUR homework project (you create it in Lesson 1)
+playground/                ← scratch projects for trying out examples (git-ignored)
 ```
 
 ## How the branches work
@@ -138,6 +139,7 @@ git log --oneline --graph --all      # picture of the whole history
 
 - **Read the compiler errors.** Rust's error messages are unusually helpful and often include the fix. Most lessons show you the errors you're likely to see.
 - **Expect warnings in the practice crates.** Until you implement a function, the compiler warns about unused variables. Those warnings go away as you fill in each `todo!()`.
+- **Experiment freely in `playground/`.** It's git-ignored, so `cd playground && cargo new try-it` gives you a throwaway project that never shows up in a commit.
 - **Run one test at a time** with `cargo test -p lesson-03 longest_word`. Cargo only runs tests whose names contain the filter text.
 - **Keep the official book open:** https://doc.rust-lang.org/book/. The "Further reading" section in each lesson points to the matching chapter.
 
