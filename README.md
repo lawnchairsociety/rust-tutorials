@@ -104,23 +104,22 @@ git log --oneline --graph --all      # picture of the whole history
 
 | # | Lesson | Topics | taskr homework |
 |---|---|---|---|
-| 01 | [Getting Started](lessons/01-getting-started.md) | cargo, variables, mutability, scalar & compound types, `println!`, constants, shadowing | Create `taskr`; print a banner and hardcoded tasks |
-| 02 | [Functions & Control Flow](lessons/02-functions-and-control-flow.md) | functions, expressions vs statements, `if`, loops, ranges, basic `match`, reading stdin | Interactive prompt with `list` / `help` / `quit` |
-| 03 | [Ownership & Borrowing](lessons/03-ownership-and-borrowing.md) | ownership, moves, `Clone`/`Copy`, references, borrowing rules, `String` vs `&str`, slices | `add` and `done` commands backed by a `Vec` |
-| 04 | [Structs & Methods](lessons/04-structs-and-methods.md) | structs, tuple/unit structs, `impl`, methods, associated functions, `derive` | `Task` and `TaskList` structs with stable IDs |
-| 05 | [Enums & Pattern Matching](lessons/05-enums-and-pattern-matching.md) | enums with data, `match`, guards, `if let`, `let else`, `Option` | `Priority` and `Command` enums; `remove` / `show` |
-| 06 | [Common Collections](lessons/06-collections.md) | `Vec`, `String` & UTF-8, `HashMap`, entry API | `#tags`, `tags`, `list #tag`, `stats` |
-| 07 | [Error Handling](lessons/07-error-handling.md) | `panic!`, `Result`, `?`, custom error types, `Display` | Typed `ParseError` / `TaskError`; never panic on input |
-| 08 | [Packages, Crates & Modules](lessons/08-modules-and-crates.md) | `lib.rs` + `main.rs`, `mod`, `pub`, `use`, file modules, dependencies | Split `taskr` into a library plus a thin binary |
-| 09 | [Traits & Generics](lessons/09-traits-and-generics.md) | generics, traits, bounds, `impl Trait`, std traits (`Display`, `FromStr`, `Ord`, `Default`, `From`) | `Display`/`FromStr` impls, `sort` command |
-| 10 | [Testing](lessons/10-testing.md) | unit, integration & doc tests, `should_panic`, TDD | 20+ tests; write the `edit` command test-first |
-| 11 | [Closures & Iterators](lessons/11-closures-and-iterators.md) | closures, `Fn` traits, iterator adapters & consumers | Combinable `list` filters, `search`, `clear` |
-| 12 | [Files & the Command Line](lessons/12-files-and-cli.md) | `std::fs`, buffered I/O, `env::args`, `Box<dyn Error>` | Save/load tasks to a file; `--file`; one-shot mode |
-| 13 | [Lifetimes, Trait Objects & Smart Pointers](lessons/13-lifetimes-and-smart-pointers.md) | lifetime annotations, `dyn Trait`, `Box`, `Rc`, `RefCell` | `Report<'a>`, Markdown/CSV `export`, `undo` |
-| 14 | [Concurrency](lessons/14-concurrency.md) | threads, channels, `Arc`, `Mutex`, scoped threads | Background saver thread with clean shutdown |
-| 15 | [Polish & Next Steps](lessons/15-polish-and-next-steps.md) | rustfmt, clippy, docs, release builds, the crate ecosystem | Lint-clean, documented, installable `taskr` |
+| 01 | [Getting Started](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-01/lessons/01-getting-started.md) | cargo, variables, mutability, scalar & compound types, `println!`, constants, shadowing | Create `taskr`; print a banner and hardcoded tasks |
+| 02 | [Functions & Control Flow](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-02/lessons/02-functions-and-control-flow.md) | functions, expressions vs statements, `if`, loops, ranges, basic `match`, reading stdin | Interactive prompt with `list` / `help` / `quit` |
+| 03 | [Ownership & Borrowing](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-03/lessons/03-ownership-and-borrowing.md) | ownership, moves, `Clone`/`Copy`, references, borrowing rules, `String` vs `&str`, slices | `add` and `done` commands backed by a `Vec` |
+| 04 | [Structs & Methods](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-04/lessons/04-structs-and-methods.md) | structs, tuple/unit structs, `impl`, methods, associated functions, `derive` | `Task` and `TaskList` structs with stable IDs |
+| 05 | [Enums & Pattern Matching](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-05/lessons/05-enums-and-pattern-matching.md) | enums with data, `match`, guards, `if let`, `let else`, `Option` | `Priority` and `Command` enums; `remove` / `show` |
+| 06 | [Common Collections](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-06/lessons/06-collections.md) | `Vec`, `String` & UTF-8, `HashMap`, entry API | `#tags`, `tags`, `list #tag`, `stats` |
+| 07 | [Error Handling](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-07/lessons/07-error-handling.md) | `panic!`, `Result`, `?`, custom error types, `Display` | Typed `ParseError` / `TaskError`; never panic on input |
+| 08 | [Packages, Crates & Modules](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-08/lessons/08-modules-and-crates.md) | `lib.rs` + `main.rs`, `mod`, `pub`, `use`, file modules, dependencies | Split `taskr` into a library plus a thin binary |
+| 09 | [Traits & Generics](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-09/lessons/09-traits-and-generics.md) | generics, traits, bounds, `impl Trait`, std traits (`Display`, `FromStr`, `Ord`, `Default`, `From`) | `Display`/`FromStr` impls, `sort` command |
+| 10 | [Testing](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-10/lessons/10-testing.md) | unit, integration & doc tests, `should_panic`, TDD | 20+ tests; write the `edit` command test-first |
+| 11 | [Closures & Iterators](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-11/lessons/11-closures-and-iterators.md) | closures, `Fn` traits, iterator adapters & consumers | Combinable `list` filters, `search`, `clear` |
+| 12 | [Files & the Command Line](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-12/lessons/12-files-and-cli.md) | `std::fs`, buffered I/O, `env::args`, `Box<dyn Error>` | Save/load tasks to a file; `--file`; one-shot mode |
+| 13 | [Lifetimes, Trait Objects & Smart Pointers](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-13/lessons/13-lifetimes-and-smart-pointers.md) | lifetime annotations, `dyn Trait`, `Box`, `Rc`, `RefCell` | `Report<'a>`, Markdown/CSV `export`, `undo` |
+| 14 | [Concurrency](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-14/lessons/14-concurrency.md) | threads, channels, `Arc`, `Mutex`, scoped threads | Background saver thread with clean shutdown |
+| 15 | [Polish & Next Steps](https://github.com/lawnchairsociety/rust-tutorials/blob/lesson-15/lessons/15-polish-and-next-steps.md) | rustfmt, clippy, docs, release builds, the crate ecosystem | Lint-clean, documented, installable `taskr` |
 
-The lesson links only work once you've merged that lesson's branch, because each branch adds its own lesson file.
 
 ## Tips
 
