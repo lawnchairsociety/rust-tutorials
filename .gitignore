@@ -5,4 +5,5 @@ exercises/Cargo.lock
 .claude/
 
 # Your own experiments; never committed
-playground/
+playground/*
+!playground/Cargo.toml
