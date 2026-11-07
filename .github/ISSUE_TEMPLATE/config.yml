@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: The Rust Programming Language (the official book)
+    url: https://doc.rust-lang.org/book/
+    about: For general Rust questions not specific to this course, the book and the Rust community are the best places to look.
+  - name: Rust users forum
+    url: https://users.rust-lang.org/
+    about: Ask general Rust questions here.
