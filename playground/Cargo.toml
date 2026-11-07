@@ -6,4 +6,4 @@
 # new project to `members` below automatically.
 [workspace]
 resolver = "3"
-members = ["hello"]
+members = []
