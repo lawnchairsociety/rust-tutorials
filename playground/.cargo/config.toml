@@ -1,0 +1,7 @@
+# Cargo settings that apply only inside playground/.
+#
+# `cargo new` normally starts a fresh git repository for each new project.
+# playground/ is git-ignored, so Cargo would do that here, and VS Code would
+# then show every experiment as a separate repository full of untracked files.
+[cargo-new]
+vcs = "none"
