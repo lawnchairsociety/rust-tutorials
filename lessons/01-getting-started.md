@@ -241,9 +241,36 @@ fn main() {
     let big: u32 = 1000;
     // let total = small + big;  // ❌ mismatched types
     let total = small as u32 + big; // ✅ explicit cast with `as`
-    println!("{sum} {quotient} {remainder} {precise} {total}");
+
+    // That includes floats and integers: no mixing them either.
+    let count = 2;
+    // let half = 7.0 / count;   // ❌ cannot divide `{float}` by `{integer}`
+    let half = 7.0 / count as f64;  // ✅ 3.5: convert the integer to a float
+    let whole = 3.9_f64 as i32;     // 3: float → int with `as` cuts off the fraction
+    println!("{sum} {quotient} {remainder} {precise} {total} {half} {whole}");
 }
 ```
+
+Many languages quietly turn `7.0 / 2` into `7.0 / 2.0` for you. Rust doesn't. Both sides of an
+arithmetic operator must have the **same** type, so a float and an integer can't be combined:
+
+```text
+error[E0277]: cannot divide `{float}` by `{integer}`
+ --> src/main.rs:2:17
+  |
+2 |     let x = 7.0 / 2;
+  |                 ^ no implementation for `{float} / {integer}`
+```
+
+The fix depends on what you have:
+
+- **Two literals:** write both as floats, `7.0 / 2.0`, or both as integers, `7 / 2` (which gives `3`).
+- **A variable:** convert it with `as`, e.g. `7.0 / count as f64`. `as` binds tighter than `/`, so
+  this converts `count` before dividing.
+- **Going the other way:** `some_float as i32` drops the fractional part (`3.9` becomes `3`). It
+  doesn't round; use `.round()` first if you want rounding.
+
+The same rule applies to `+`, `-`, `*` and `%`, and to mixing integer types like `u8` and `u32`.
 
 ---
 
