@@ -7,3 +7,4 @@ exercises/Cargo.lock
 # Your own experiments; never committed
 playground/*
 !playground/Cargo.toml
+!playground/.cargo/
