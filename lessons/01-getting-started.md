@@ -422,7 +422,10 @@ All in `exercises/lesson-01/src/lib.rs` unless noted.
 8. **`padded_score(name: &str, score: u32) -> String`** — name left-aligned in 8 columns,
    then score right-aligned in 4 columns, wrapped in pipes: `"|Ann     |  42|"`.
 9. **`to_u8_saturating(x: u32) -> u8`** — convert to `u8`, but values above 255 become 255.
-   (Hint: compare against `u8::MAX as u32`... or look up `u8::try_from` — or use `.min()`.)
+   Hint: `x as u8` alone isn't enough. When a value doesn't fit, `as` keeps only the lowest
+   8 bits, so `256 as u8` is `0` and `1000 as u8` is `232`. Instead, cap `x` *while it's still a
+   `u32`*, then convert. Every number type has a `.min()` method that returns the smaller of
+   two values of the same type: `5000_u32.min(100)` is `100`, and `40_u32.min(100)` is `40`.
 
 Written questions (`exercises/lesson-01/ANSWERS.md`):
 
