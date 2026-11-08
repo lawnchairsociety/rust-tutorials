@@ -32,5 +32,7 @@ My prediction:
 Actual output:
 
 ## Q4. What happens with `let a: u8 = 255; let b = a + 1;` in a debug build? In a release build?
+(Hint: the compiler may catch the literal case. Try `let b = a + std::hint::black_box(1);`
+to see the runtime behavior.)
 
 Answer:
