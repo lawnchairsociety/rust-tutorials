@@ -501,7 +501,15 @@ $ cargo run
 
 ### Stretch goals
 
-- Align titles in a column using width formatting (`{:<20}`).
+- Print a second "table view" below the list, with a column *after* the title, and use width
+  formatting to line it up:
+  ```text
+  1. Buy milk       [x] P1
+  2. Write report   [ ] P2
+  3. Call mom       [ ] P3
+  ```
+  Hint: `{title:<14}` pads the title to 14 characters. Padding only has a visible effect when
+  something comes after the padded field. On the last field of a line, it just adds trailing spaces.
 - Print the percentage of tasks done with one decimal place: `33.3% done`.
 
 ---
