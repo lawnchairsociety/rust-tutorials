@@ -578,6 +578,9 @@ Bye!
 
 ### Stretch goals
 
+Stretch goals may change the structure above. You can rename or replace a required function
+if the commands still behave as specified.
+
 - `undone <n>` to mark a task pending again (share code with `mark_done`).
 - `priority <n> <1-3>` to change a task's priority.
 - `done` on an already-done task prints `Task 2 is already done.`
