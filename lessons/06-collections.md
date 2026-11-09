@@ -448,6 +448,7 @@ Unknown command: add #oops (type 'help')
 - `untag <id> <tag>` and `tag <id> <tag>` commands.
 - Show the top-3 most used tags in `stats`.
 - Use a `BTreeMap` for the tag counts so you don't need the extra sort step.
+  This replaces the `HashMap` in requirement 5.
 
 ---
 

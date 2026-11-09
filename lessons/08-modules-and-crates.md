@@ -361,6 +361,8 @@ Restructure **without changing behavior**:
   `main.rs` needs, and nothing more?
 - Try `cargo add rand`, use it for a hidden `taskr> random` command that picks a random
   pending task, then decide whether it's worth keeping the dependency.
+  This is an exception to "without changing behavior" and requirement 7, so finish the
+  restructure first.
 
 ---
 
