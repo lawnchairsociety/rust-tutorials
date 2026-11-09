@@ -609,8 +609,10 @@ taskr> list
 ### Stretch goals
 
 - Support the priority marker **anywhere** in the title (`add !high Pay rent`).
+  This replaces the last-word rule in requirement 3. Lesson 06 makes it required.
 - Add `undone <id>` (variant `Undone(u32)`).
 - Add `priority <id> <low|med|high>` (variant `SetPriority(u32, Priority)`).
+  This replaces lesson 04's `priority <id> <1-3>` stretch goal, if you did it.
 
 ---
 
