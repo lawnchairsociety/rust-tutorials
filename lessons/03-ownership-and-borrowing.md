@@ -578,8 +578,9 @@ Bye!
 
 ### Stretch goals
 
-Stretch goals may change the structure above. You can rename or replace a required function
-if the commands still behave as specified.
+Stretch goals are optional and override the requirements where they conflict, including
+function names and data types. Later lessons assume only the required work, so if a stretch
+feature doesn't fit a later lesson, adapt it or drop it.
 
 - `undone <n>` to mark a task pending again (share code with `mark_done`).
 - `priority <n> <1-3>` to change a task's priority.
