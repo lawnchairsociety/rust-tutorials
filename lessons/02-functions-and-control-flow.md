@@ -387,6 +387,9 @@ Written questions (`exercises/lesson-02/ANSWERS.md`):
 From lesson 01: `taskr/src/main.rs` prints a banner from constants, three hardcoded
 tasks stored as an array of `(&str, u8, bool)` tuples, and a summary line.
 
+If you did lesson 01's stretch goals, you can keep them as extras or drop them. This
+lesson's `list` format and summary line are the required baseline.
+
 ### Requirements
 
 1. Write **`fn format_task(n: usize, title: &str, priority: u8, done: bool) -> String`** that
@@ -444,6 +447,8 @@ Bye!
 - Accept `exit` and `q` as synonyms for `quit`, and `?` as a synonym for `help`.
 - Make commands case-insensitive (look up `to_lowercase` — note it returns a `String`, so
   you'll match on `input.to_lowercase().as_str()`).
+  Keep the original text for the `Unknown command` message: trim first, and lowercase
+  only for the `match`.
 
 ---
 
