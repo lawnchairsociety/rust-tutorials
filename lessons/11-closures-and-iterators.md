@@ -501,7 +501,8 @@ into iterator pipelines and uses closures to build a much more flexible `list` c
 1. **Iterator refactor.** Rewrite loop-based logic to use iterators wherever it makes the code
    clearer. At minimum:
    - `stats`: totals and per-priority counts using `filter(...).count()` (or `fold`)
-   - `tags`: gather all tags with `flat_map`, count them into a `HashMap`, then sort
+   - `tags`: gather all tags with `flat_map`, count them into a `HashMap` (or a `BTreeMap`, if
+     you did lesson 06's stretch goal), then sort
    - tag/priority parsing in `command.rs`: e.g. `split_whitespace().filter(...)`
    - any "find task by id" code: `iter().find(...)` / `iter_mut().find(...)` / `position(...)`
 
@@ -598,9 +599,13 @@ High: 1  Medium: 1  Low: 0
 ### Stretch goals
 
 - `list` sorted output: `list !high sort` or similar. Reuse your `sort` logic with `sort_by`.
-- Implement `Iterator` for a custom type, e.g. `TaskList::iter(&self)` returning
-  `impl Iterator<Item = &Task>`, and use it in your Display/printing code.
+  This makes `sort` a valid word, an exception to the unknown-word `ParseError` in requirement 3.
+- Add `TaskList::iter(&self)` returning `impl Iterator<Item = &Task>`, and use it in your
+  Display/printing code. To go further, implement the `Iterator` trait yourself on a custom
+  struct.
 - Support OR within a category: `list #home #work` = tasks with *either* tag.
+  This changes `tag` in requirement 3 to a list, such as `Vec<String>`. Different categories
+  still combine with AND.
 
 ---
 

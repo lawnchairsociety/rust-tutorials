@@ -96,6 +96,10 @@ git commit -m "Lesson 01 complete"
 
 Then ask Claude: **"Please review lesson 01."** The review covers your practice solutions, your `ANSWERS.md`, and your `taskr` changes. If the review suggests fixes, commit them on the same branch.
 
+### Stretch goals
+
+Stretch goals are optional and override the requirements where they conflict, including function names and data types. Later lessons assume only the required work, so if a stretch feature doesn't fit a later lesson, adapt it or drop it.
+
 ### Moving on to the next lesson
 
 Run this from your finished `work-NN` branch. The example goes from Lesson 1 to Lesson 2:
