@@ -393,6 +393,10 @@ From lesson 03: tasks are a `Vec<(String, u8, bool)>`; free functions `print_tas
 `add_task`, `mark_done`, `format_task`; commands `add <title>`, `done <n>` (1-based
 position), `list`, `help`, `quit`.
 
+If you did lesson 03's stretch goals, `undone`, `priority` and the "already done" message
+aren't part of this lesson's requirements, so adapt them or drop them. If you renamed
+`mark_done`, treat your version as `mark_done` here.
+
 ### Requirements
 
 1. Define a `Task` struct and derive `Debug, Clone, PartialEq`:
@@ -468,11 +472,12 @@ Bye!
 
 ### Stretch goals
 
-- Add `fn get_mut(&mut self, id: u32)` — hmm, what should it return when there's no such
+- Add `fn find_mut(&mut self, id: u32)` — hmm, what should it return when there's no such
   task? Think about it; lesson 05 gives the answer (`Option`).
 - Add `fn pending_count(&self) -> usize` and `fn done_count(&self) -> usize` and use them
   in `print`.
 - Add a `priority <id> <1-3>` command implemented as a `TaskList` method.
+  Lesson 05 replaces the `u8` priority, so this command will need rewriting there.
 
 ---
 
