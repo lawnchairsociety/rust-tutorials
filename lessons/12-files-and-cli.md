@@ -500,6 +500,8 @@ Error: broken.db line 1: invalid priority 'urgent'
 - `--help` flag that prints the usage message and exits with code 0.
 - Respect a `TASKR_FILE` environment variable (`std::env::var`) when `--file` isn't given.
 - Escape `|` and `\` in titles instead of rejecting them.
+  This replaces the rejection in requirement 2 and its test in requirement 7. Test that
+  those titles survive a save and load instead.
 
 ---
 

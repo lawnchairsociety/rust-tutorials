@@ -436,8 +436,11 @@ Bye!
 - **Debounce.** If many `Save` messages pile up, only the latest matters. After receiving one
   `Save`, drain the queue with `try_recv()` and keep only the newest list before writing.
   Add a test that sends 100 saves quickly and checks that the final file has the last state.
+  This changes requirement 2, since not every `Save` gets its own write. The REPL still
+  calls `saver.save` after each mutating command.
 - **Autosave interval.** Instead of saving on every command, save at most once every 2 seconds
   using `recv_timeout`. Make sure `Shutdown` still flushes a pending save!
+  This also changes requirement 2 in the same way. Requirement 3 stays as written.
 - Use `thread::Builder::new().name("taskr-saver".into())` so the thread has a name in panic
   messages and debuggers.
 

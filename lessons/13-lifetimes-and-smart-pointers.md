@@ -572,7 +572,8 @@ taskr> list
 - A third exporter, e.g. `JsonExporter` written by hand (no crates), with proper string escaping.
 - `redo`: when you undo, push the current state onto a `redo` stack. Any new mutating command clears it.
 - `export` respects filters: `export md out.md pending #work`.
-- Write a generic `fn export_with(exporter: &dyn Exporter, ...)`, and compare it with `fn export_with<E: Exporter>(exporter: &E, ...)`.
+  With no filters, it still writes all tasks as in requirement 9.
+- Write `fn export_with(exporter: &dyn Exporter, ...)` using a trait object, and compare it with the generic `fn export_with<E: Exporter>(exporter: &E, ...)`.
 
 ---
 
